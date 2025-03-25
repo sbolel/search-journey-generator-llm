@@ -66,49 +66,126 @@ describe('llmExpansion Module', () => {
       maxQueries: 3,
       commonExpansions: [],
     };
-    
+
     const analyticalPersona: Persona = {
       name: 'InDepthAnalyst',
       maxQueries: 5,
       commonExpansions: [],
     };
-    
+
     const casualResult = await getAIExpansion(
       'Technology',
       'Latest tech trends',
       new Set(),
       casualPersona
     );
-    
+
     const analyticalResult = await getAIExpansion(
       'Technology',
       'Latest tech trends',
       new Set(),
       analyticalPersona
     );
-    
+
     expect(casualResult).toBe('Mocked AI expansion query');
     expect(analyticalResult).toBe('Mocked AI expansion query');
   });
 
   test('handles API errors gracefully', async () => {
     // Spy on console.error
-    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const consoleErrorSpy = jest
+      .spyOn(console, 'error')
+      .mockImplementation(() => {});
 
     // Simulate API error for this test
     createMock.mockRejectedValueOnce(new Error('API Error'));
-    
+
     const result = await getAIExpansion(
       'Error Test',
       'This should handle errors',
       new Set(),
       mockPersona
     );
-    
+
     expect(result).toBe('');
-    expect(consoleErrorSpy).toHaveBeenCalledWith('Error in getAIExpansion:', expect.any(Error));
-    
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      'Error in getAIExpansion:',
+      expect.any(Error)
+    );
+
     // Restore console.error
     consoleErrorSpy.mockRestore();
+  });
+
+  test('returns empty string when response has no choices', async () => {
+    // Mock the OpenAI API to return an empty choices array
+    createMock.mockResolvedValueOnce({
+      choices: [],
+    });
+
+    const result = await getAIExpansion(
+      'Test Topic',
+      'Previous Query',
+      new Set(),
+      mockPersona
+    );
+
+    expect(result).toBe('');
+  });
+
+  test('returns empty string when choice has no message', async () => {
+    // Mock the OpenAI API to return a choice without a message
+    createMock.mockResolvedValueOnce({
+      choices: [
+        {
+          // message is missing
+        },
+      ],
+    });
+
+    const result = await getAIExpansion(
+      'Test Topic',
+      'Previous Query',
+      new Set(),
+      mockPersona
+    );
+
+    expect(result).toBe('');
+  });
+
+  test('returns empty string when message has no content', async () => {
+    // Mock the OpenAI API to return a message without content
+    createMock.mockResolvedValueOnce({
+      choices: [
+        {
+          message: {
+            // content is missing
+          },
+        },
+      ],
+    });
+
+    const result = await getAIExpansion(
+      'Test Topic',
+      'Previous Query',
+      new Set(),
+      mockPersona
+    );
+
+    expect(result).toBe('');
+  });
+
+  test('returns empty string when response has no choices property', async () => {
+    // Mock the OpenAI API to return a response without the choices property
+    createMock.mockResolvedValueOnce({});
+
+    const result = await getAIExpansion(
+      'Test Topic',
+      'Previous Query',
+      new Set(),
+      mockPersona
+    );
+
+    expect(result).toBe('');
   });
 });

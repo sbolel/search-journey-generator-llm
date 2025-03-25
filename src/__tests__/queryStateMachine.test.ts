@@ -49,8 +49,8 @@ describe('queryStateMachine Module', () => {
   });
 
   test('All transitions point to valid states', () => {
-    Object.values(stateTransitions).forEach(transitions => {
-      transitions.forEach(nextState => {
+    Object.values(stateTransitions).forEach((transitions) => {
+      transitions.forEach((nextState) => {
         expect(states).toContain(nextState);
       });
     });

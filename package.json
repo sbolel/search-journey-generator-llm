@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "start": "npx ts-node src/index.ts",
-    "test": "jest",
-    "prepare": "husky",
-    "format": "prettier --write ."
+    "test": "NODE_ENV=test jest --all  --coverage --colors",
+    "test-ci": "NODE_ENV=test jest --ci --all  --coverage --colors --maxWorkers=100%",
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "prepare": "husky"
   },
   "packageManager": "yarn@4.7.0",
   "engines": {
