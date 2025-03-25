@@ -24,8 +24,12 @@ export async function mockSearchEngine(query: string): Promise<SearchResults> {
   const relevanceScore = Math.random(); // 0 to 1
 
   // Produce a snippet referencing part of the query
-  const snippet = `Snippet for "${query.slice(0, 60)}..." indicating partial coverage.`;
-
-  // Return a promise that resolves with a simulated object
-  return { relevanceScore, snippet };
+  if (query === '') {
+    // Handle empty query case
+    const snippet = `Snippet for "" indicating partial coverage.`;
+    return { relevanceScore, snippet };
+  } else {
+    const snippet = `Snippet for "${query.slice(0, 60)}..." indicating partial coverage.`;
+    return { relevanceScore, snippet };
+  }
 }

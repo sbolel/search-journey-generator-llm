@@ -3,24 +3,31 @@ import { Persona } from '../personas';
 
 // Mock OpenAI
 jest.mock('openai', () => {
+  const createMock = jest.fn().mockResolvedValue({
+    choices: [
+      {
+        message: {
+          content: 'Mocked AI expansion query',
+        },
+      },
+    ],
+  });
+
   return jest.fn().mockImplementation(() => {
     return {
       chat: {
         completions: {
-          create: jest.fn().mockResolvedValue({
-            choices: [
-              {
-                message: {
-                  content: 'Mocked AI expansion query',
-                },
-              },
-            ],
-          }),
+          create: createMock,
         },
       },
     };
   });
 });
+
+// Import the mocked OpenAI and get reference to the create mock
+import OpenAI from 'openai';
+const openaiInstance = new OpenAI();
+const createMock = openaiInstance.chat.completions.create as jest.Mock;
 
 describe('llmExpansion Module', () => {
   const mockPersona: Persona = {
@@ -85,19 +92,8 @@ describe('llmExpansion Module', () => {
   });
 
   test('handles API errors gracefully', async () => {
-    // Temporarily override the mock to simulate an error
-    const originalMock = require('openai');
-    jest.mock('openai', () => {
-      return jest.fn().mockImplementation(() => {
-        return {
-          chat: {
-            completions: {
-              create: jest.fn().mockRejectedValue(new Error('API Error')),
-            },
-          },
-        };
-      });
-    });
+    // Simulate API error for this test
+    createMock.mockRejectedValueOnce(new Error('API Error'));
     
     const result = await getAIExpansion(
       'Error Test',
@@ -108,7 +104,6 @@ describe('llmExpansion Module', () => {
     
     expect(result).toBe('');
     
-    // Restore the original mock
-    jest.mock('openai', () => originalMock);
+    // The mock will automatically restore after this call due to mockRejectedValueOnce
   });
 });
