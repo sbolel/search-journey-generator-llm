@@ -16,40 +16,40 @@ export interface Persona {
 }
 
 export const casualResearcher: Persona = {
-  name: "CasualResearcher",
+  name: 'CasualResearcher',
   maxQueries: 10,
   commonExpansions: [
-    "basic overview",
-    "recent trends",
-    "related topics",
-    "quick tips",
-    "introductory information",
-  ]
+    'basic overview',
+    'recent trends',
+    'related topics',
+    'quick tips',
+    'introductory information',
+  ],
 };
 
 export const inDepthAnalyst: Persona = {
-  name: "InDepthAnalyst",
+  name: 'InDepthAnalyst',
   maxQueries: 10,
   commonExpansions: [
-    "detailed review",
-    "comparative study",
-    "expert perspectives",
-    "market analysis",
-    "competitors",
-    "future projections",
-    "case studies",
-  ]
+    'detailed review',
+    'comparative study',
+    'expert perspectives',
+    'market analysis',
+    'competitors',
+    'future projections',
+    'case studies',
+  ],
 };
 
 export const genericUser: Persona = {
-  name: "GenericUser",
+  name: 'GenericUser',
   maxQueries: 10,
   commonExpansions: [
-    "overview",
-    "details",
-    "comparisons",
-    "pros and cons",
-    "reviews",
-    "recommendations",
-  ]
+    'overview',
+    'details',
+    'comparisons',
+    'pros and cons',
+    'reviews',
+    'recommendations',
+  ],
 };

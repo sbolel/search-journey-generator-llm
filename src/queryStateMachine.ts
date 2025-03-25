@@ -5,11 +5,11 @@
  */
 
 export type QueryState =
-  | "BroadOverview"
-  | "Refinement"
-  | "Comparison"
-  | "ExpertDetail"
-  | "FinalSynthesis";
+  | 'BroadOverview'
+  | 'Refinement'
+  | 'Comparison'
+  | 'ExpertDetail'
+  | 'FinalSynthesis';
 
 /**
  * Defines permissible transitions between states:
@@ -20,9 +20,9 @@ export type QueryState =
  *   - "FinalSynthesis" -> end of the journey
  */
 export const stateTransitions: Record<QueryState, QueryState[]> = {
-  BroadOverview: ["Refinement", "Comparison"],
-  Refinement: ["Comparison", "ExpertDetail"],
-  Comparison: ["ExpertDetail", "Refinement"],
-  ExpertDetail: ["FinalSynthesis", "Comparison"],
-  FinalSynthesis: []
+  BroadOverview: ['Refinement', 'Comparison'],
+  Refinement: ['Comparison', 'ExpertDetail'],
+  Comparison: ['ExpertDetail', 'Refinement'],
+  ExpertDetail: ['FinalSynthesis', 'Comparison'],
+  FinalSynthesis: [],
 };

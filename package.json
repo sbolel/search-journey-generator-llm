@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npx ts-node src/index.ts",
     "test": "echo \"Warning: no test specified\"",
-    "prepare": "husky install",
+    "prepare": "husky",
     "format": "prettier --write ."
   },
   "packageManager": "yarn@4.7.0",
