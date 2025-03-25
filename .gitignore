@@ -1,13 +1,21 @@
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+# Environment files
+.env
 
-# Swap the comments on the following lines if you wish to use zero-installs
-# In that case, don't forget to run `yarn config set enableGlobalCache false`!
-# Documentation here: https://yarnpkg.com/features/caching#zero-installs
+# Yarn-specific artifacts
+.yarn/cache/               # Cached package archives (regenerated)
+.yarn/unplugged/           # Unplugged package sources (regenerated)
+.yarn/build-state.yml      # Build state file (transient)
+.yarn/install-state.gz     # Installation state (transient)
+.yarn-error.log            # Yarn error log
 
-#!.yarn/cache
-.pnp.*
+# Node modules (installed via nodeLinker: node-modules)
+node_modules/
+
+# TypeScript artifacts
+*.tsbuildinfo             # Incremental build info files
+dist/                     # Common build output folder
+build/                    # Alternative build output folder
+
+# OS generated files
+.DS_Store
+Thumbs.db
