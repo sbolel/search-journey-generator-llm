@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "npx ts-node src/index.ts",
-    "test": "echo \"Warning: no test specified\"",
+    "test": "jest",
     "prepare": "husky",
     "format": "prettier --write ."
   },
