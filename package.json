@@ -13,7 +13,7 @@
   "packageManager": "yarn@4.7.0",
   "engines": {
     "node": "20",
-    "npm": "^11.2.0",
+    "npm": "please-use-yarn",
     "yarn": "^4.7.0"
   },
   "dependencies": {
