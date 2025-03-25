@@ -1,5 +1,5 @@
 {
-  "name": "@sbolel/user-journey-generator-llm",
+  "name": "@sbolel/search-journey-generator-llm",
   "version": "0.0.0-semantic-release",
   "private": true,
   "scripts": {

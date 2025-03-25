@@ -1,4 +1,4 @@
-# User Journey Generator LLM
+# Search Journey Generator LLM
 
 This project demonstrates how to generate realistic, multi-step user queries for a selected topic using:
 
@@ -11,7 +11,7 @@ This project demonstrates how to generate realistic, multi-step user queries for
 
 ## Project Overview
 
-The **User Journey Generator** simulates how a real user refines their search terms step by step. We accomplish this by:
+The **Search Journey Generator** simulates how a real user refines their search terms step by step. We accomplish this by:
 
 1. Picking a **random topic** (e.g., _Educational Technology_).
 2. Starting with a broad query (e.g., `"Educational Technology updates 2025"`).
@@ -142,7 +142,7 @@ You can add or modify these to produce new or different personas.
 ### 4. State Machine Logic
 
 - **Location**: [`src/queryStateMachine.ts`](./src/queryStateMachine.ts)
-- Outlines how the user journey transitions between states:
+- Outlines how the Search journey transitions between states:
   - `BroadOverview → Refinement` or `Comparison`
   - `Refinement → Comparison` or `ExpertDetail`
   - `ExpertDetail → FinalSynthesis` or `Comparison`
