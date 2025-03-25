@@ -1,24 +1,32 @@
 # Environment files
 .env
 
+# Coverage
+coverage/
+
+# Logs
+logs/
+*.log
+
 # Yarn-specific artifacts
-.yarn/cache/               # Cached package archives (regenerated)
-.yarn/unplugged/           # Unplugged package sources (regenerated)
-.yarn/build-state.yml      # Build state file (transient)
-.yarn/install-state.gz     # Installation state (transient)
-.yarn-error.log            # Yarn error log
+.yarn/cache
+.yarn/cache/
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.yarn-error.log
 
 # Node modules (installed via nodeLinker: node-modules)
 node_modules/
 
 # TypeScript artifacts
-*.tsbuildinfo             # Incremental build info files
-dist/                     # Common build output folder
-build/                    # Alternative build output folder
+*.tsbuildinfo
+dist/
+build/
 
 # OS generated files
 .DS_Store
 Thumbs.db
 
 # Husky Git hooks
-.husky/
+.husky
