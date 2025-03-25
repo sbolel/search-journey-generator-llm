@@ -92,6 +92,9 @@ describe('llmExpansion Module', () => {
   });
 
   test('handles API errors gracefully', async () => {
+    // Spy on console.error
+    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+
     // Simulate API error for this test
     createMock.mockRejectedValueOnce(new Error('API Error'));
     
@@ -103,7 +106,9 @@ describe('llmExpansion Module', () => {
     );
     
     expect(result).toBe('');
+    expect(consoleErrorSpy).toHaveBeenCalledWith('Error in getAIExpansion:', expect.any(Error));
     
-    // The mock will automatically restore after this call due to mockRejectedValueOnce
+    // Restore console.error
+    consoleErrorSpy.mockRestore();
   });
 });
