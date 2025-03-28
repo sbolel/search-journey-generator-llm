@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "dotenv": "^16.4.7",
-    "openai": "^4.89.0",
+    "openai": "^4.90.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
   },
