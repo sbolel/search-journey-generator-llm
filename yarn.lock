@@ -756,7 +756,7 @@ __metadata:
     dotenv: "npm:^16.4.7"
     husky: "npm:^9.1.7"
     jest: "npm:^29.7.0"
-    openai: "npm:^4.89.0"
+    openai: "npm:^4.92.1"
     prettier: "npm:^3.5.3"
     pretty-quick: "npm:^4.1.1"
     ts-jest: "npm:^29.3.0"
@@ -3132,9 +3132,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openai@npm:^4.89.0":
-  version: 4.89.0
-  resolution: "openai@npm:4.89.0"
+"openai@npm:^4.92.1":
+  version: 4.92.1
+  resolution: "openai@npm:4.92.1"
   dependencies:
     "@types/node": "npm:^18.11.18"
     "@types/node-fetch": "npm:^2.6.4"
@@ -3153,7 +3153,7 @@ __metadata:
       optional: true
   bin:
     openai: bin/cli
-  checksum: 10/0ae07814d112a0292df6342e1b98cf4d0a13eee9bd0a8df428a67d339d95d02379baa6ef929c338b747899b5b4a4880212a457acb07aabd775d1204b949d92fc
+  checksum: 10/3c7302aef433c1769f6990fdae957f4718cb07c73dc5ff7514cc0756c3188a1c6b543072842ef2259bedf14a4142390a8eb7e5eec8eb371ba2fbfdd3216e5ba9
   languageName: node
   linkType: hard
 
