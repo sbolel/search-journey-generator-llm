@@ -752,7 +752,7 @@ __metadata:
   resolution: "@sbolel/search-journey-generator-llm@workspace:."
   dependencies:
     "@types/jest": "npm:^29.5.14"
-    "@types/node": "npm:^22.13.13"
+    "@types/node": "npm:^22.15.16"
     dotenv: "npm:^16.4.7"
     husky: "npm:^9.1.7"
     jest: "npm:^29.7.0"
@@ -913,7 +913,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^22.13.13":
+"@types/node@npm:*":
   version: 22.13.13
   resolution: "@types/node@npm:22.13.13"
   dependencies:
@@ -928,6 +928,15 @@ __metadata:
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 10/c3012a71e10d950d9e9c392cb3dc0fb9d90e387d1943020d30dfbbebf89ef575d8a315ec9c659bb589a265b594808d7e74f5044ec1b15563ef49d3b4808264b0
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.15.16":
+  version: 22.15.16
+  resolution: "@types/node@npm:22.15.16"
+  dependencies:
+    undici-types: "npm:~6.21.0"
+  checksum: 10/d8055a0ab033ed16368109183f7e11d5364e5d8d5bd9a12df7fa1673a624823aaaaa54c0afef1648d0bfa7e12ef20b600f9d006accebecdb9931d2b72d05c7be
   languageName: node
   linkType: hard
 
@@ -3887,6 +3896,13 @@ __metadata:
   version: 6.20.0
   resolution: "undici-types@npm:6.20.0"
   checksum: 10/583ac7bbf4ff69931d3985f4762cde2690bb607844c16a5e2fbb92ed312fe4fa1b365e953032d469fa28ba8b224e88a595f0b10a449332f83fa77c695e567dbe
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: 10/ec8f41aa4359d50f9b59fa61fe3efce3477cc681908c8f84354d8567bb3701fafdddf36ef6bff307024d3feb42c837cf6f670314ba37fc8145e219560e473d14
   languageName: node
   linkType: hard
 
