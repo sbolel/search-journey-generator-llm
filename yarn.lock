@@ -759,7 +759,7 @@ __metadata:
   resolution: "@sbolel/search-journey-generator-llm@workspace:."
   dependencies:
     "@types/jest": "npm:^29.5.14"
-    "@types/node": "npm:^22.15.27"
+    "@types/node": "npm:^22.15.32"
     dotenv: "npm:^16.4.7"
     husky: "npm:^9.1.7"
     jest: "npm:^29.7.0"
@@ -938,12 +938,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.15.27":
-  version: 22.15.27
-  resolution: "@types/node@npm:22.15.27"
+"@types/node@npm:^22.15.32":
+  version: 22.15.32
+  resolution: "@types/node@npm:22.15.32"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10/22ec9b8f2802437d60e1e9957340fed838f4322f5163e7e9046ff2e19c79d9d12a77b1c16205c21854b68c589b1fc7c3506b8ebd7cd4e7c5ebfcddb8b8083989
+  checksum: 10/10b4c106d0c512a1d35ec08142bd7fb5cf2e1df93fc5627b3c69dd843dec4be07a47f1fa7ede232ad84762d75a372ea35028b79ee1e753b6f2adecd0b2cb2f71
   languageName: node
   linkType: hard
 
